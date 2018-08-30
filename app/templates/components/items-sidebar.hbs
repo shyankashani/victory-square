@@ -2,9 +2,14 @@
   <div class="row">
     <div class="col-12">
       {{#each colors as |color|}}
-        <div {{action toggleColorId color.id}}>
-          {{color.name}}
-        </div>
+        {{filter-checkbox
+          text=color.name
+          color=color.color
+          checkboxId=color.id
+          selectedId=selectedColorId
+          clickAction=(action toggleColorId color.id)
+        }}
+        {{log color.id}}
       {{/each}}
     </div>
   </div>
