@@ -1,16 +1,29 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
-      {{#each colors as |color|}}
-        {{filter-checkbox
-          text=color.name
-          color=color.color
-          checkboxId=color.id
-          selectedId=selectedColorId
-          clickAction=(action toggleColorId color.id)
-        }}
-        {{log color.id}}
-      {{/each}}
+      {{#filter-group title="Difficulty"}}
+        {{#each colors as |color|}}
+          {{filter-checkbox
+            text=color.name
+            color=color.color
+            checkboxId=color.id
+            selectedId=selectedColorId
+            clickAction=(action toggleColorId color.id)
+          }}
+        {{/each}}
+      {{/filter-group}}
+
+      {{#filter-group title="Categories"}}
+        {{#each categories as |category|}}
+          {{filter-checkbox
+            text=category.name
+            color="secondary"
+            checkboxId=category.id
+            selectedId=selectedCategoryId
+            clickAction=(action toggleCategoryId category.id)
+          }}
+        {{/each}}
+      {{/filter-group}}
     </div>
   </div>
 </div>

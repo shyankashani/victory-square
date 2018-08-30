@@ -4,6 +4,7 @@ import { computed } from '@ember/object';
 export default Component.extend({
   items: null,
   colors: null,
+  categories: null,
 
   selectedColorId: null,
   selectedCategoryId: null,
@@ -13,25 +14,43 @@ export default Component.extend({
     'selectedColorId',
     'selectedCategoryId',
     function() {
-      const selectedColorId = this.get('selectedColorId');
-      const selectedCategoryId = this.get('selectedCategoryId');
+      const selectedColorId = Number(this.get('selectedColorId'));
+      const selectedCategoryId = Number(this.get('selectedCategoryId'));
 
-      if (selectedColorId || selectedCategoryId) {
+      if (selectedColorId && selectedCategoryId) {
         return this.get('items').filter(function(item) {
-          return Number(item.get('colorId')) === Number(selectedColorId);
+          const isSelectedColor = item.get('colorId') === selectedColorId;
+          const isSelectedCategory = item.get('categoryId') === selectedCategoryId;
+          return isSelectedColor && isSelectedCategory;
+        });
+      } else if (selectedColorId) {
+        return this.get('items').filter(function(item) {
+          const isSelectedColor = item.get('colorId') === selectedColorId;
+          return isSelectedColor;
+        });
+      } else if (selectedCategoryId) {
+        return this.get('items').filter(function(item) {
+          const isSelectedCategory = item.get('categoryId') === selectedCategoryId;
+          return isSelectedCategory;
         });
       }
+
       return this.get('items');
     }
   ),
 
   actions: {
     toggleColorId(colorId) {
-      const selectedColorId = this.get('selectedColorId');
-      if (Number(colorId) === Number(selectedColorId)) {
+      if (Number(colorId) === Number(this.get('selectedColorId'))) {
         this.set('selectedColorId', null);
       }
       this.set('selectedColorId', colorId);
+    },
+    toggleCategoryId(categoryId) {
+      if (Number(categoryId) === Number(this.get('selectedCategoryId'))) {
+        this.set('selectedCategoryId', null);
+      }
+      this.set('selectedCategoryId', categoryId);
     }
   }
 });
