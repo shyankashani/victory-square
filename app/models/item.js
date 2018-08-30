@@ -2,6 +2,12 @@ import DS from 'ember-data';
 import { computed } from '@ember/object';
 import _ from 'lodash';
 
+const BADGE_COLORS = {
+  1: 'success',
+  2: 'warning',
+  3: 'danger'
+};
+
 export default DS.Model.extend({
 
   /*
@@ -38,6 +44,7 @@ export default DS.Model.extend({
   /*
    * Color properties
    */
+  colorId: computed.reads('color.id'),
   colorName: computed.reads('color.name'),
   colorDescription: computed.reads('color.description'),
   colorHex: computed.reads('color.hex'),
@@ -45,6 +52,7 @@ export default DS.Model.extend({
   /*
    * Category properties
    */
+  categoryId: computed.reads('category.id'),
   categoryName: computed.reads('category.name'),
 
   /*
@@ -77,4 +85,9 @@ export default DS.Model.extend({
       ? `${minPlayTime}-${maxPlayTime} minutes`
       : `${maxPlayTime} minutes`;
   }),
+
+  badgeColor: computed('colorId', function() {
+    const colorId = this.get('colorId');
+    return BADGE_COLORS[colorId];
+  })
 });

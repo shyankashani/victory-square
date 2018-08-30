@@ -1,4 +1,4 @@
-{{outlet}}
-{{#each model as |item|}}
-  {{item-row item=item}}
-{{/each}}
+{{items-container
+  items=model.items
+  colors=model.colors
+}}

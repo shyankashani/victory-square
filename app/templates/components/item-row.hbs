@@ -1,2 +1,32 @@
-{{yield}}
-{{log item}}
+<div class="row d-flex align-items-center border-bottom py-3">
+  <div class="col-1">
+    <div class="image-wrapper-small border rounded">
+      <img src={{item.thumbnail}} class="image-small" />
+    </div>
+  </div>
+  <div class="col-2">
+    {{item.name}}
+  </div>
+  <div class="col-2">
+    {{item-badge
+      text=item.location
+      color="primary"
+      borderColor="primary"
+      icon="map-marker-alt"
+    }}
+  </div>
+  <div class="col-2">
+    {{item-badge
+      text=item.colorName
+      color=item.badgeColor
+      borderColor=item.badgeColor
+    }}
+  </div>
+  <div class="col-2">
+    {{item-badge
+      text=item.categoryName
+      color="light"
+      borderColor="secondary"
+    }}
+  </div>
+</div>

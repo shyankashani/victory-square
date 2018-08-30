@@ -1,0 +1,42 @@
+.image-wrapper-small {
+  display: flex;
+  height: 80px;
+  width: 80px;
+  justify-content: left;
+  align-items: start;
+  overflow: hidden;
+}
+
+.image-wrapper-tiny {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  justify-content: left;
+  align-items: start;
+  overflow: hidden;
+}
+
+.image-wrapper-teensy {
+  height: 14px;
+  width: 14px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-teensy {
+  flex-shrink: 0;
+  max-width: 130%;
+  max-height: 130%;
+}
+
+.image-small {
+  flex-shrink: 0;
+  max-width: 180%;
+  max-height: 180%;
+}
+
+.row:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
