@@ -1,4 +1,4 @@
-<div class="container-fluid text-{{color}}" {{action clickAction}}>
+<div class="container-fluid text-{{color}}" {{action clickAction checkboxId}}>
   <div class="row">
     <div class="col-1 px-0">
       {{#if isSelected}}
@@ -7,7 +7,7 @@
         {{fa-icon "square-o"}}
       {{/if}}
     </div>
-    <div class="col-11 px-0">
+    <div class="col-11 pl-2 pr-0">
       {{text}}
     </div>
   </div>

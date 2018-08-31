@@ -43,14 +43,16 @@ export default Component.extend({
     toggleColorId(colorId) {
       if (Number(colorId) === Number(this.get('selectedColorId'))) {
         this.set('selectedColorId', null);
+      } else {
+        this.set('selectedColorId', colorId);
       }
-      this.set('selectedColorId', colorId);
     },
     toggleCategoryId(categoryId) {
       if (Number(categoryId) === Number(this.get('selectedCategoryId'))) {
         this.set('selectedCategoryId', null);
+      } else {
+        this.set('selectedCategoryId', categoryId);
       }
-      this.set('selectedCategoryId', categoryId);
     }
   }
 });
