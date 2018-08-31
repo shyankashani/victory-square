@@ -8,7 +8,7 @@ export default Component.extend({
 
   selectedColorId: null,
   selectedCategoryId: null,
-  searchQuery: 'catan',
+  searchQuery: '',
 
   filteredItems: computed(
     'items.@each.(colorId,categoryId)',
