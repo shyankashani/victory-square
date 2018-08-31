@@ -42,12 +42,12 @@ export default DS.Model.extend({
   bggAverageRating: computed.reads('game.bgg_average_rating'),
 
   /*
-   * Color properties
+   * Difficulty properties
    */
-  colorId: computed.reads('color.id'),
-  colorName: computed.reads('color.name'),
-  colorDescription: computed.reads('color.description'),
-  colorHex: computed.reads('color.hex'),
+  difficultyId: computed.reads('color.id'),
+  difficultyName: computed.reads('color.name'),
+  difficultyDescription: computed.reads('color.description'),
+  difficultyHex: computed.reads('color.hex'),
 
   /*
    * Category properties
@@ -86,8 +86,8 @@ export default DS.Model.extend({
       : `${maxPlayTime} minutes`;
   }),
 
-  badgeColor: computed('colorId', function() {
-    const colorId = this.get('colorId');
-    return BADGE_COLORS[colorId];
+  badgeColor: computed('difficultyId', function() {
+    const difficultyId = this.get('difficultyId');
+    return BADGE_COLORS[difficultyId];
   })
 });

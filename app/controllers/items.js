@@ -12,7 +12,7 @@ export default Controller.extend({
     let items = this.model.items;
 
     if (difficulty) {
-      items = items.filterBy('colorName', difficulty);
+      items = items.filterBy('difficultyName', difficulty);
     }
 
     if (category) {

@@ -5,28 +5,39 @@
         {{input value=searchQuery placeholder="Search..." class="w-75 border-0 bg-light px-3 py-1"}}
       {{/filter-group}}
 
-      {{#filter-group title="Difficulty"}}
+      {{#filter-group title="Difficulties"}}
+        {{#link-to "items" (query-params difficulty=null)}}
+          {{filter-checkbox
+            text="All"
+            color="primary"
+            isSelected=(not selectedDifficulty)
+          }}
+        {{/link-to}}
         {{#each difficulties as |difficulty|}}
           {{#link-to "items" (query-params difficulty=difficulty.name)}}
             {{filter-checkbox
               text=difficulty.name
               color=difficulty.color
-              checkboxId=difficulty.id
-              selectedId=selectedColorId
+              isSelected=(eq selectedDifficulty difficulty.name)
             }}
           {{/link-to}}
         {{/each}}
       {{/filter-group}}
 
       {{#filter-group title="Categories"}}
+        {{#link-to "items" (query-params category=null)}}
+          {{filter-checkbox
+            text="All"
+            color="secondary"
+            isSelected=(not selectedCategory)
+          }}
+        {{/link-to}}
         {{#each categories as |category|}}
           {{#link-to "items" (query-params category=category.name)}}
             {{filter-checkbox
               text=category.name
               color="secondary"
-              checkboxId=category.id
-              selectedId=selectedCategoryId
-              clickAction=(action toggleCategoryId)
+              isSelected=(eq selectedCategory category.name)
             }}
           {{/link-to}}
         {{/each}}

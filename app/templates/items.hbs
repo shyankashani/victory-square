@@ -3,11 +3,10 @@
     <div class="col-2">
       {{items-sidebar
         class="position-fixed"
-        searchQuery=searchQuery
+        selectedDifficulty=difficulty
+        selectedCategory=category
         difficulties=model.difficulties
         categories=model.categories
-        difficulty=difficulty
-        category=category
       }}
     </div>
     <div class="col-10 d-flex align-items-end">
