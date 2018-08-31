@@ -1,6 +1,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
+      {{#filter-group title="Search"}}
+        {{input value=searchQuery}}
+      {{/filter-group}}
+
       {{#filter-group title="Difficulty"}}
         {{#each colors as |color|}}
           {{filter-checkbox

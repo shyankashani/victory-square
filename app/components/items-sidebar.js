@@ -7,5 +7,5 @@ export default Component.extend({
   selectedCategoryId: null,
 
   toggleColorId() {},
-  toggleCategoryId() {}
+  toggleCategoryId() {},
 });
