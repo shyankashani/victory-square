@@ -1,5 +1,21 @@
-{{items-container
-  items=filteredItems
-  colors=model.colors
-  categories=model.categories
-}}
+<div class="container-fluid mt-5 pt-5">
+  <div class="row d-flex justify-content-between">
+    <div class="col-2">
+      {{items-sidebar
+        class="position-fixed"
+        searchQuery=searchQuery
+        difficulties=model.difficulties
+        categories=model.categories
+        difficulty=difficulty
+        category=category
+      }}
+    </div>
+    <div class="col-10 d-flex align-items-end">
+      <div class="container-fluid">
+        {{#each filteredItems as |item|}}
+          {{item-row item=item}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

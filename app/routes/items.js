@@ -5,8 +5,8 @@ export default Route.extend({
   model() {
     return RSVP.hash({
       items: this.store.findAll('item'),
-      colors: this.store.findAll('color'),
-      categories: this.store.findAll('category')
+      categories: this.store.findAll('category'),
+      difficulties: this.store.findAll('difficulty')
     })
   }
 });

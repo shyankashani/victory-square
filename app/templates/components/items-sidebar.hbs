@@ -6,26 +6,29 @@
       {{/filter-group}}
 
       {{#filter-group title="Difficulty"}}
-        {{#each colors as |color|}}
-          {{filter-checkbox
-            text=color.name
-            color=color.color
-            checkboxId=color.id
-            selectedId=selectedColorId
-            clickAction=(action toggleColorId)
-          }}
+        {{#each difficulties as |difficulty|}}
+          {{#link-to "items" (query-params difficulty=difficulty.name)}}
+            {{filter-checkbox
+              text=difficulty.name
+              color=difficulty.color
+              checkboxId=difficulty.id
+              selectedId=selectedColorId
+            }}
+          {{/link-to}}
         {{/each}}
       {{/filter-group}}
 
       {{#filter-group title="Categories"}}
         {{#each categories as |category|}}
-          {{filter-checkbox
-            text=category.name
-            color="secondary"
-            checkboxId=category.id
-            selectedId=selectedCategoryId
-            clickAction=(action toggleCategoryId)
-          }}
+          {{#link-to "items" (query-params category=category.name)}}
+            {{filter-checkbox
+              text=category.name
+              color="secondary"
+              checkboxId=category.id
+              selectedId=selectedCategoryId
+              clickAction=(action toggleCategoryId)
+            }}
+          {{/link-to}}
         {{/each}}
       {{/filter-group}}
     </div>
