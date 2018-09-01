@@ -2,10 +2,11 @@ import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 
 export default Controller.extend({
-  queryParams: ['difficulty', 'category', 'search'],
+  queryParams: ['difficulty', 'category', 'search', 'gameId'],
   difficulty: null,
   category: null,
   search: null,
+  gameId: null,
 
   filteredItems: computed('difficulty', 'category', 'search', 'model.items', function() {
     let difficulty = this.difficulty;
@@ -32,6 +33,17 @@ export default Controller.extend({
     }
 
     return items;
+  }),
+
+  selectedItem: computed('gameId', 'model.items', function() {
+    let gameId = this.gameId;
+    let items = this.model.items;
+
+    if (gameId) {
+      return items.filterBy('id', gameId).get('firstObject');
+    }
+
+    return null;
   })
 });
 

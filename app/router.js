@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('items', { path: 'inventory' });
+  this.route('game');
 });
 
 export default Router;
