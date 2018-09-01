@@ -1,9 +1,19 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
-      {{#filter-group title="Search"}}
-        {{input value=searchQuery placeholder="Search..." class="w-75 border-0 bg-light px-3 py-1"}}
-      {{/filter-group}}
+      <div class="container-fluid mb-4">
+        <div class="row mb-2">
+          <div class="col-12">
+            {{fa-icon "search"}}
+            {{input
+              value=search
+              placeholder="Search"
+              autofocus=true
+              class="border-top-0 border-left-0 border-right-0 border-bottom border-secondary w-50 p-0 ml-1"
+            }}
+          </div>
+        </div>
+      </div>
 
       {{#filter-group title="Difficulties"}}
         {{#link-to "items" (query-params difficulty=null)}}

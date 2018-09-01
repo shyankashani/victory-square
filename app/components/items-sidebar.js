@@ -5,7 +5,5 @@ export default Component.extend({
   categories: null,
   selectedColorId: null,
   selectedCategoryId: null,
-
-  toggleColorId() {},
-  toggleCategoryId() {},
+  search: null
 });
