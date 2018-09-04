@@ -4,6 +4,6 @@ export default DS.RESTAdapter.extend({
   host: 'http://localhost:8000',
 
   pathForType() {
-    return 'items';
+    return 'games';
   }
 });

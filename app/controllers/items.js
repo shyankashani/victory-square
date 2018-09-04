@@ -44,7 +44,13 @@ export default Controller.extend({
     }
 
     return null;
-  })
+  }),
+
+  actions: {
+    clearSelectedItem() {
+      this.set('gameId', null);
+    }
+  }
 });
 
 

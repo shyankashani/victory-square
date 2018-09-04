@@ -1,5 +1,5 @@
 <div class="container-fluid mt-5 pt-5">
-  <div class="row d-flex justify-content-between">
+  <div class="row">
     <div class="col-2">
       {{items-sidebar
         class="position-fixed"
@@ -10,7 +10,7 @@
         categories=model.categories
       }}
     </div>
-    <div class="col-10 d-flex align-items-end">
+    <div class="col-8">
       <div class="container-fluid">
         {{#each filteredItems as |item|}}
           {{item-row item=item}}
@@ -19,64 +19,8 @@
     </div>
   </div>
 </div>
-{{#bs-modal
-  open=gameId
-  size="large"
-  centered=true
+{{item-modal
+  item=selectedItem
+  isOpen=gameId
+  onHide=(action "clearSelectedItem")
 }}
-  <div class="container pl-5 pb-5 pr-5">
-    <div class="row">
-      <div class="col col-4">
-        <img src={{selectedItem.image}} class="align-self-start rounded w-100 border" />
-      </div>
-      <div class="col col-8">
-        <div class="container">
-          <div class="row font-weight-bold mb-2">
-            <div class="col-2">
-              {{item-badge
-                text=selectedItem.location
-                color="primary"
-                borderColor="primary"
-                icon="map-marker-alt"
-              }}
-            </div>
-            <div class="col-2">
-              {{item-badge
-                text=selectedItem.difficultyName
-                color=selectedItem.badgeColor
-                borderColor=selectedItem.badgeColor
-              }}
-            </div>
-            <div class="col-2">
-              {{item-badge
-                text=selectedItem.categoryName
-                color="light"
-                borderColor="secondary"
-              }}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col h1 text-dark">
-              {{selectedItem.name}}
-            </div>
-          </div>
-          <div class="row font-weight-bold text-primary">
-            <div class="col-auto pr-0">
-              {{fa-icon "user"}}
-              {{selectedItem.numberOfPlayers}}
-            </div>
-            <div class="col-auto pr-0">
-              <fa :icon="faClock" />
-              {{fa-icon "clock"}}
-              {{selectedItem.playTime}}
-            </div>
-            <div class="col-auto pr-0">
-              {{fa-icon "child"}}
-              {{selectedItem.minAge}}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-{{/bs-modal}}

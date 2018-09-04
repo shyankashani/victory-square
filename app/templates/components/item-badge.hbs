@@ -1,6 +1,10 @@
+{{#if isEditing}}
+  {{input type=inputType}}
+{{else}}
 <div class="badge badge-{{color}} border border-{{borderColor}}">
   {{#if icon}}
     {{fa-icon "map-marker"}}
   {{/if}}
   {{text}}
 </div>
+{{/if}}

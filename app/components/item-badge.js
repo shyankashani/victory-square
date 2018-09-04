@@ -6,4 +6,8 @@ export default Component.extend({
   image: null,
   text: null,
   borderColor: null,
+
+  isEditing: false,
+  inputType: null,
+  onChange: null,
 });

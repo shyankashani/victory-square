@@ -11,6 +11,8 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
 
+  items: DS.hasMany('items'),
+
   color: computed('id', function() {
     const id = this.get('id');
     return BADGE_COLORS[id];

@@ -20,9 +20,10 @@ export default DS.Model.extend({
   /*
    * Embeded records
    */
-  game: DS.attr(),
-  color: DS.attr(),
-  category: DS.attr(),
+  organization: DS.belongsTo('organization'),
+  game: DS.belongsTo('game'),
+  difficulty: DS.belongsTo('difficulty'),
+  category: DS.belongsTo('category'),
 
   /*
    * Game properties
@@ -44,10 +45,10 @@ export default DS.Model.extend({
   /*
    * Difficulty properties
    */
-  difficultyId: computed.reads('color.id'),
-  difficultyName: computed.reads('color.name'),
-  difficultyDescription: computed.reads('color.description'),
-  difficultyHex: computed.reads('color.hex'),
+  difficultyId: computed.reads('difficulty.id'),
+  difficultyName: computed.reads('difficulty.name'),
+  difficultyDescription: computed.reads('difficulty.description'),
+  difficultyHex: computed.reads('difficulty.hex'),
 
   /*
    * Category properties
@@ -84,6 +85,11 @@ export default DS.Model.extend({
     return minPlayTime < maxPlayTime
       ? `${minPlayTime}-${maxPlayTime} minutes`
       : `${maxPlayTime} minutes`;
+  }),
+
+  minimumAge: computed('minAge', function() {
+    const minAge = this.get('minAge');
+    return `${minAge} years and up`;
   }),
 
   badgeColor: computed('difficultyId', function() {
