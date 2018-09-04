@@ -8,7 +8,7 @@
   <div class="container p-5">
     <div class="row">
       <div class="col col-4">
-        <img src={{item.image}} class="align-self-start rounded w-100 border" />
+        <img src={{item.game.image}} class="align-self-start rounded w-100 border" />
       </div>
       <div class="col col-8">
         <div class="container">
@@ -23,14 +23,14 @@
             </div>
             <div class="col-auto pr-0">
               {{item-badge
-                text=item.difficultyName
-                color=item.badgeColor
-                borderColor=item.badgeColor
+                text=item.difficulty.name
+                color=item.difficulty.color
+                borderColor=item.difficulty.color
               }}
             </div>
             <div class="col-auto pr-0">
               {{item-badge
-                text=item.categoryName
+                text=item.category.name
                 color="light"
                 borderColor="secondary"
               }}
@@ -38,26 +38,26 @@
           </div>
           <div class="row">
             <div class="col h1 text-dark">
-              {{item.name}}
+              {{item.game.name}}
             </div>
           </div>
           <div class="row text-primary">
             <div class="col-auto pr-0">
               {{fa-icon "user"}}
-              {{item.numberOfPlayers}}
+              {{item.game.numberOfPlayers}}
             </div>
             <div class="col-auto pr-0">
               {{fa-icon "clock-o"}}
-              {{item.playTime}}
+              {{item.game.playTime}}
             </div>
             <div class="col-auto pr-0">
               {{fa-icon "child"}}
-              {{item.minimumAge}}
+              {{item.game.minimumAge}}
             </div>
           </div>
           <div class="row pt-4 text-muted">
             <div class="col">
-              {{item.shortDescription}}
+              {{item.game.shortDescription}}
             </div>
           </div>
         </div>

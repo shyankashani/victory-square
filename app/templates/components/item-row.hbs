@@ -2,7 +2,7 @@
   <div class="row d-flex align-items-center border-bottom py-3">
     <div class="col-2">
       <div class="image-wrapper-small border rounded">
-        <img src={{item.thumbnail}} class="image-small" />
+        <img src={{item.game.thumbnail}} class="image-small" />
       </div>
     </div>
     <div class="col-2">
@@ -18,14 +18,14 @@
     </div>
     <div class="col-2">
       {{item-badge
-        text=item.difficultyName
-        color=item.badgeColor
-        borderColor=item.badgeColor
+        text=item.difficulty.name
+        color=item.difficulty.color
+        borderColor=item.difficulty.color
       }}
     </div>
     <div class="col-2">
       {{item-badge
-        text=item.categoryName
+        text=item.category.name
         color="light"
         borderColor="secondary"
       }}
