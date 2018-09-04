@@ -1,5 +1,7 @@
 {{#if isEditing}}
-  {{input type=inputType}}
+  {{#power-select options=options onchange=(action "onChange") as |option|}}
+    {{option.name}}
+  {{/power-select}}
 {{else}}
 <div class="badge badge-{{color}} border border-{{borderColor}}">
   {{#if icon}}

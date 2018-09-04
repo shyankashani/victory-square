@@ -7,7 +7,11 @@ export default Component.extend({
   text: null,
   borderColor: null,
 
-  isEditing: false,
+  isEditing: true,
   inputType: null,
-  onChange: null,
+  options: null,
+
+  actions: {
+    onChange() {}
+  }
 });
