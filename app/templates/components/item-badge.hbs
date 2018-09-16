@@ -1,7 +1,27 @@
 {{#if isEditing}}
-  {{#power-select options=options onchange=(action "onChange") as |option|}}
-    {{option.name}}
-  {{/power-select}}
+  {{#if options}}
+    {{#power-select
+      options=options
+      selected=selected
+      onchange=(action "onChange")
+      renderInPlace=true
+      searchEnabled=false
+      as |option|
+    }}
+      {{option.name}}
+    {{/power-select}}
+  {{else}}
+    {{input
+      value=text
+      class="
+        badge-input
+        rounded
+        py-0
+        px-2
+        font-weight-bold
+      "
+    }}
+  {{/if}}
 {{else}}
 <div class="badge badge-{{color}} border border-{{borderColor}}">
   {{#if icon}}

@@ -14,7 +14,13 @@
         <div class="container">
           <div class="row mb-2">
             <div class="col-auto pr-0">
+              <span {{action "toggleIsEditing"}}>
+                {{fa-icon "pencil"}}
+              </span>
+            </div>
+            <div class="col-auto pr-0">
               {{item-badge
+                isEditing=isEditing
                 text=item.location
                 color="primary"
                 borderColor="primary"
@@ -23,17 +29,21 @@
             </div>
             <div class="col-auto pr-0">
               {{item-badge
+                isEditing=isEditing
                 text=item.difficulty.name
                 color=item.difficulty.color
                 borderColor=item.difficulty.color
+                selected=item.difficulty
                 options=difficulties
               }}
             </div>
             <div class="col-auto pr-0">
               {{item-badge
+                isEditing=isEditing
                 text=item.category.name
                 color="light"
                 borderColor="secondary"
+                selected=item.category
                 options=categories
               }}
             </div>
