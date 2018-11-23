@@ -5,5 +5,13 @@ export default DS.RESTAdapter.extend({
 
   pathForType() {
     return 'items';
+  },
+
+  init() {
+    this._super(...arguments);
+
+    this.set('headers', {
+      'Accept': 'application/json'
+    })
   }
 });

@@ -8,10 +8,5 @@ export default Route.extend({
       categories: this.store.findAll('category'),
       difficulties: this.store.findAll('difficulty')
     })
-  },
-  updateItem(id) {
-    return this.store.findRecord('item', id).then(function(item) {
-      item.set()
-    });
   }
 });
