@@ -6,7 +6,8 @@ export default Route.extend({
     return RSVP.hash({
       items: this.store.findAll('item'),
       categories: this.store.findAll('category'),
-      difficulties: this.store.findAll('difficulty')
+      difficulties: this.store.findAll('difficulty'),
+      games: this.store.findAll('game')
     })
   }
 });
