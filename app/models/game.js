@@ -17,7 +17,7 @@ export default DS.Model.extend({
   bgg_average_weight: DS.attr('number'),
   bgg_average_rating: DS.attr('number'),
 
-  items: DS.hasMany('items'),
+  items: DS.attr(),
 
   longDescription: computed('description', function() {
     const description = this.get('description');

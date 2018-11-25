@@ -11,7 +11,7 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
 
-  items: DS.hasMany('items'),
+  items: DS.attr(),
 
   color: computed('id', function() {
     const id = this.get('id');

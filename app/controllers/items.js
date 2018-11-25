@@ -16,19 +16,22 @@ export default Controller.extend({
 
     if (difficulty) {
       items = items.filter(function(item) {
-        return _isStringMatch(difficulty, item.difficultyName);
+        return _isStringMatch(difficulty, item.difficulty.name);
       });
     }
 
     if (category) {
       items = items.filter(function(item) {
-        return _isStringMatch(category, item.categoryName);
+        return _isStringMatch(category, item.category.name);
       });
     }
 
     if (search) {
       items = items.filter(function(item) {
-        return _isStringMatch(search, item.name) || _isStringMatch(search, item.shortDescription);
+        const name = item.get('game.name');
+        const shortDescription = item.get('game.shortDescription');
+        return name && _isStringMatch(search, name) ||
+          shortDescription && _isStringMatch(search, shortDescription);
       });
     }
 
