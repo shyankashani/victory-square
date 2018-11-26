@@ -1,4 +1,4 @@
-<div class="container-fluid p-5">
+<div class="container-fluid p-5 text-dark">
   <div class="row pb-5">
     <div class="col">
       <h1>
@@ -7,8 +7,47 @@
     </div>
   </div>
   <div class="row">
-    <div class="col col-2">
-      <img src={{model.item.game.image}} class="align-self-start w-100" />
+    <div class="col col-2 pr-5">
+      <div class="image-wrapper-medium">
+        <img src={{model.item.game.image}} class="image-medium" />
+      </div>
+    </div>
+    <div class="col col-4">
+      <div class="row">
+        <div class="col-auto">
+          {{info-label
+            header="Players"
+            icon="users"
+            value=model.item.game.numberOfPlayers
+            size="large"
+          }}
+        </div>
+        <div class="col-auto">
+          {{info-label
+            header="Duration"
+            icon="clock-o"
+            value=model.item.game.playTime
+            size="large"
+          }}
+        </div>
+        <div class="col-auto">
+          {{info-label
+            header="Ages"
+            icon="child"
+            value=model.item.game.minimumAge
+            size="large"
+          }}
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col">
+          {{info-label
+            header="Description"
+            icon="book"
+            value=model.item.game.longDescription
+          }}
+        </div>
+      </div>
     </div>
   </div>
 </div>

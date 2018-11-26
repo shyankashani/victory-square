@@ -49,6 +49,6 @@ export default DS.Model.extend({
 
   minimumAge: computed('min_age', function() {
     const min_age = this.get('min_age');
-    return `${min_age} years and up`;
+    return `${min_age} and up`;
   }),
 });
