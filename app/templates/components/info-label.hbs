@@ -12,12 +12,6 @@
     </span>
   </div>
   <div class="mt-2">
-    {{#if (eq size 'large')}}
-      <h3>
-        {{value}}
-      </h3>
-    {{else}}
-      {{value}}
-    {{/if}}
+    {{yield}}
   </div>
 </div>
