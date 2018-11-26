@@ -1,3 +1,7 @@
+.app {
+  font-family: 'Roboto', sans-serif !important;
+}
+
 .image-wrapper-small {
   display: flex;
   height: 80px;
