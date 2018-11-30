@@ -5,7 +5,7 @@ import _ from 'lodash';
 export default DS.Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
-  yearPublished: DS.attr('number'),
+  year_published: DS.attr('number'),
   min_players: DS.attr('number'),
   max_players: DS.attr('number'),
   playing_time: DS.attr('number'),

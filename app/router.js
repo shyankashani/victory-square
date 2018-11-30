@@ -7,13 +7,22 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('items', { path: 'inventory' });
   this.route('organizations', function() {
     this.route('organization', { path: '/:organization_id' }, function() {
       this.route('inventory', function() {
         this.route('item', { path: '/:item_id' });
       });
     });
+  });
+
+  this.route('games', function() {
+    this.route('game');
+  });
+
+  this.route('game', function() {
+    this.route('filter');
+    this.route('batch');
+    this.route('detail');
   });
 });
 

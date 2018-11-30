@@ -1,0 +1,12 @@
+<div class="bg-light position-fixed p-5 h-100 overflow-scroll">
+  <div class="row">
+    <div class="col">
+      <h1>{{yield (hash isHeaderSection=true)}}</h1>
+    </div>
+  </div>
+  <div class="row py-5">
+    <div class="col pb-5">
+      {{yield (hash isBodySection=true)}}
+    </div>
+  </div>
+</div>

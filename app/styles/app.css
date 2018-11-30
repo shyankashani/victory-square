@@ -3,6 +3,9 @@
   font-weight: 400 !important;
 }
 
+.overflow-scroll {
+  overflow: scroll;
+}
 
 .image-wrapper-medium {
   display: flex;

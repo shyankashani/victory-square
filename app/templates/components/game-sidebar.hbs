@@ -1,0 +1,33 @@
+{{#sidebar-container as |section|}}
+  {{#if section.isHeaderSection}}
+    Game Detail
+  {{else if section.isBodySection}}
+    {{#info-label header="Description" icon="book"}}
+      <p>{{game.shortDescription}}</p>
+    {{/info-label}}
+
+    {{#info-label header="Players" icon="users"}}
+      <h3>{{game.numberOfPlayers}}</h3>
+    {{/info-label}}
+
+    {{#info-label header="Duration" icon="clock-o"}}
+      <h3>{{game.playTime}}</h3>
+    {{/info-label}}
+
+    {{#info-label header="Ages" icon="child"}}
+      <h3>{{game.minimumAge}}</h3>
+    {{/info-label}}
+
+    {{#info-label header="Board Game Geek Average Rating" icon="star"}}
+      <h3>{{game.bgg_average_rating}}</h3>
+    {{/info-label}}
+
+    {{#info-label header="Board Game Geek Average Weight" icon="balance-scale"}}
+      <h3>{{game.bgg_average_weight}}</h3>
+    {{/info-label}}
+
+    {{#info-label header="Year Published" icon="calendar"}}
+      <h3>{{game.year_published}}</h3>
+    {{/info-label}}
+  {{/if}}
+{{/sidebar-container}}
