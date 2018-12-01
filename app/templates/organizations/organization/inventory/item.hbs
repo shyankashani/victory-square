@@ -1,30 +1,33 @@
-  <div class="col col-9 p-5">
-    <div class="row">
-      <div class="col">
-        <h1>{{model.item.game.name}}</h1>
-      </div>
-    </div>
-    <div class="row pt-5">
-      <div class="col col-3 pr-5">
-          <img src={{model.item.game.image}} class="w-100"/>
-      </div>
-      <div class="col col-2 pr-5">
-        {{#info-label header="House Location" icon="map-pin"}}
-          <h3>Shelf {{model.item.location}}</h3>
-        {{/info-label}}
-      </div>
-      <div class="col col-2 pr-5">
-        {{#info-label header="House Difficulty" icon="gear"}}
-          <h3>{{model.item.difficulty.name}}</h3>
-        {{/info-label}}
-      </div>
-      <div class="col col-2 pr-5">
-        {{#info-label header="House Category" icon="tag"}}
-          <h3>{{model.item.category.name}}</h3>
-        {{/info-label}}
-      </div>
+<div class="col col-8 p-5">
+  <div class="row">
+    <div class="col">
+      <h1>{{model.item.game.name}}</h1>
     </div>
   </div>
-  {{game-sidebar
-    game=model.item.game
-  }}
+  <div class="row pt-5">
+    <div class="col-3 pr-5">
+        <img src={{model.item.game.image}} class="w-100"/>
+    </div>
+    <div class="col-6 pr-5">
+      {{#info-label header="Description" icon="book"}}
+        {{model.item.game.shortDescription}}
+      {{/info-label}}
+    </div>
+    <div class="col-3 pr-5">
+      {{#info-label header="House Location" icon="map-pin"}}
+        <h3 class="pb-5">Shelf {{model.item.location}}</h3>
+      {{/info-label}}
+
+      {{#info-label header="House Difficulty" icon="gear"}}
+        <h3 class="pb-5">{{model.item.difficulty.name}}</h3>
+      {{/info-label}}
+
+      {{#info-label header="House Category" icon="tag"}}
+        <h3 class="pb-5">{{model.item.category.name}}</h3>
+      {{/info-label}}
+    </div>
+  </div>
+</div>
+{{game-sidebar
+  game=model.item.game
+}}

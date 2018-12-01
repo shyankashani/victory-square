@@ -1,0 +1,11 @@
+{{#sidebar-container as |section|}}
+  {{#if section.isHeaderSection}}
+    Game Filters
+  {{else if section.isBodySection}}
+    {{filter-checkbox
+      text='Monkey'
+      color='secondary'
+      isSelected=true
+    }}
+  {{/if}}
+{{/sidebar-container}}
