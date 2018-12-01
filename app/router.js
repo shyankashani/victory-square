@@ -18,12 +18,6 @@ Router.map(function() {
   this.route('games', function() {
     this.route('game');
   });
-
-  this.route('game', function() {
-    this.route('filter');
-    this.route('batch');
-    this.route('detail');
-  });
 });
 
 export default Router;

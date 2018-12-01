@@ -2,8 +2,13 @@ import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
 
 export default Route.extend({
-  model(params, transition) {
+  queryParams: {
+    players: {
+      refreshModel: true
+    }
+  },
 
+  model(params, transition) {
     const items = this.store.peekAll('item').length
       ? this.store.peekAll('item')
       : this.store.query('item', {

@@ -2,10 +2,8 @@
   {{#if section.isHeaderSection}}
     Game Filters
   {{else if section.isBodySection}}
-    {{filter-checkbox
-      text='Monkey'
-      color='secondary'
-      isSelected=true
-    }}
+    {{#info-label header="Number of Players" icon="users"}}
+      {{filter-checkbox text="1" color="dark"}}
+    {{/info-label}}
   {{/if}}
 {{/sidebar-container}}
