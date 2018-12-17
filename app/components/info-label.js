@@ -1,21 +1,56 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 export default Component.extend({
   classNames: ['cursor-pointer'],
-  header: null,
+
+  /*
+   * The property being labeled.
+   *
+   * {String}
+   */
+  property: null,
+
+  /*
+   * The value of the property being labeled.
+   *
+   * {String}
+   */
   value: null,
+
+  /*
+   * The icon to show in the label.
+   *
+   * {String}
+   */
   icon: null,
+
+  /*
+   * The size of the label.
+   *
+   * {String}
+   */
   size: 'small',
+
   model: null,
 
   showEditIcon: false,
 
-  isEditable: false,
+  isEditing: false,
 
-  updateItem() {},
+  /*
+   * The call back to update the value.
+   *
+   * {String}
+   */
+  update: null,
+
+  isEditable: computed.notEmpty('update'),
 
   mouseEnter() {
-    this.set('showEditIcon', true);
+    if (this.get('isEditable')) {
+      this.set('showEditIcon', true);
+    }
   },
 
   mouseLeave() {
@@ -23,16 +58,22 @@ export default Component.extend({
   },
 
   actions: {
-    makeEditable() {
-      this.set('isEditable', true);
+    edit() {
+      this.set('isEditing', true);
     },
 
-    check() {
-      this.get('updateItem')(
-        this.get('item'),
-        this.get('property'),
-        this.get('value')
-      )
+    save() {
+      const update = this.get('update');
+      const property = this.get('property');
+      const value = this.get('value');
+      console.log('value', value);
+
+      update(property, value);
+      this.set('isEditing', false);
+    },
+
+    discard() {
+      this.set('isEditing', false);
     }
   }
 });

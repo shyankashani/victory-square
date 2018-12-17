@@ -125,3 +125,17 @@
 .cursor-pointer:hover {
   cursor: pointer;
 }
+
+.button-small {
+  display: inline;
+  font-size: 13px !important;
+  vertical-align: top;
+  padding: 2px 4px;
+  background-color: #E2E2E2;
+  border-radius: 5px;
+}
+
+.button-small:hover {
+  background-color: #D2D2D2;
+  cursor: pointer;
+}

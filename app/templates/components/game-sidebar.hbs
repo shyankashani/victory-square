@@ -2,28 +2,47 @@
   {{#if section.isHeaderSection}}
     Game Detail
   {{else if section.isBodySection}}
-    {{#info-label header="Players" icon="users"}}
-      <h3 class="pb-5">{{game.numberOfPlayers}}</h3>
-    {{/info-label}}
-
-    {{#info-label header="Duration" icon="clock-o"}}
-      <h3 class="pb-5">{{game.playTime}}</h3>
-    {{/info-label}}
-
-    {{#info-label header="Ages" icon="child"}}
-      <h3 class="pb-5">{{game.minimumAge}}</h3>
-    {{/info-label}}
-
-    {{#info-label header="Board Game Geek Average Rating" icon="star"}}
-      <h3 class="pb-5">{{game.bgg_average_rating}}</h3>
-    {{/info-label}}
-
-    {{#info-label header="Board Game Geek Average Weight" icon="balance-scale"}}
-      <h3 class="pb-5">{{game.bgg_average_weight}}</h3>
-    {{/info-label}}
-
-    {{#info-label header="Year Published" icon="calendar"}}
-      <h3 class="pb-5">{{game.year_published}}</h3>
-    {{/info-label}}
+    {{info-label
+      property="numberOfPlayers"
+      icon="users"
+      value=game.numberOfPlayers
+      size="large"
+      class="pb-5"
+    }}
+    {{info-label
+      property="playTime"
+      icon="clock-o"
+      value=game.playTime
+      size="large"
+      class="pb-5"
+    }}
+    {{info-label
+      property="minimumAge"
+      icon="child"
+      value=game.minimumAge
+      size="large"
+      class="pb-5"
+    }}
+    {{info-label
+      property="bgg_average_rating"
+      icon="star"
+      value=game.bgg_average_rating
+      size="large"
+      class="pb-5"
+    }}
+    {{info-label
+      property="bgg_average_weight"
+      icon="balance-scale"
+      value=game.bgg_average_weight
+      size="large"
+      class="pb-5"
+    }}
+    {{info-label
+      property="year_published"
+      icon="calendar"
+      value=game.year_published
+      size="large"
+      class="pb-5"
+    }}
   {{/if}}
 {{/sidebar-container}}

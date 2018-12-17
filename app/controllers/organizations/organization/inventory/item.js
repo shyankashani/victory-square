@@ -2,9 +2,9 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
   actions: {
-    updateItem(item, property, value) {
-      item.set(property, value);
-      item.save();
+    update(property, value) {
+      this.get('model.item').set(property, value);
+      this.get('model.item').save();
     }
   }
 });

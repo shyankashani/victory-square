@@ -10,35 +10,35 @@
     </div>
     {{info-label
       class="col-6 pr-5"
-      header="Description"
+      property="description"
+      value=model.item.game.shortDescription
       icon="book"
       size="small"
-      value=model.item.game.shortDescription
     }}
     <div class="col-3 pr-5">
       {{info-label
-        class="pb-4"
-        header="House Location"
+        class="pb-5"
+        property="location"
+        value=model.item.location
         icon="map-pin"
         size="large"
-        value=model.item.location
-        item=model.item
-        property="location"
-        updateItem=(action "updateItem")
+        update=(action "update")
       }}
       {{info-label
-        class="pb-4"
-        header="House Difficulty"
+        class="pb-5"
+        property="difficulty"
+        value=model.item.difficulty.name
         icon="gear"
         size="large"
-        value=model.item.difficulty.name
+        update=(action "update")
+        options=model.difficulties
       }}
       {{info-label
-        class="pb-4"
-        header="House Category"
+        class="pb-5"
+        property="category"
+        value=model.item.category.name
         icon="tag"
         size="large"
-        value=model.item.category.name
       }}
     </div>
   </div>
