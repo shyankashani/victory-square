@@ -3,7 +3,28 @@
     Game Filters
   {{else if section.isBodySection}}
     {{#info-label header="Number of Players" icon="users"}}
-      {{filter-checkbox text="1" color="dark"}}
+      <div class="mb-5">
+        {{#each playerOptions as |option|}}
+          {{filter-checkbox
+            takeAction=togglePlayers
+            value=option
+            selectedValue=players
+            color="dark"
+          }}
+        {{/each}}
+      </div>
+    {{/info-label}}
+    {{#info-label header="Duration" icon="clock-o"}}
+      <div class="mb-5">
+        {{#each durationOptions as |option|}}
+          {{filter-checkbox
+            takeAction=togglePlayTime
+            value=option
+            selectedValue=playTime
+            color="dark"
+          }}
+        {{/each}}
+      </div>
     {{/info-label}}
   {{/if}}
 {{/sidebar-container}}

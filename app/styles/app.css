@@ -113,3 +113,11 @@
   font-size: 12px;
   line-height: 1.4;
 }
+
+.font-monospace {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+.cursor-pointer:hover {
+  cursor: pointer;
+}

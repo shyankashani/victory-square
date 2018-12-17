@@ -5,16 +5,18 @@ export default Route.extend({
   queryParams: {
     players: {
       refreshModel: true
+    },
+    playTime: {
+      refreshModel: true
     }
   },
 
   model(params, transition) {
-    const items = this.store.peekAll('item').length
-      ? this.store.peekAll('item')
-      : this.store.query('item', {
-          'filter{organization}': transition.params['organizations.organization'].organization_id,
-          'include[]': 'game.*'
-        });
+    const items = _getItemsForOrganization(
+        this.store,
+        transition.params['organizations.organization'].organization_id,
+        params
+      );
 
     const difficulties = this.store.peekAll('difficulty').length
       ? this.store.peekAll('difficulty')
@@ -37,3 +39,24 @@ export default Route.extend({
 
   }
 });
+
+function _getItemsForOrganization(store, organizationId, params) {
+  const queryObject = {
+    'filter{organization}': organizationId,
+    'include[]': 'game.*'
+  };
+
+  if (params.players) {
+    queryObject['filter{game.min_players.lte}'] = params.players;
+    queryObject['filter{game.max_players.gte}'] = params.players;
+  }
+
+  if (params.playTime) {
+    queryObject['filter{game.min_play_time.lte}'] = params.playTime;
+    queryObject['filter{game.max_play_time.gte}'] = params.playTime;
+  }
+
+  console.log('queryObject', queryObject)
+
+  return store.query('item', queryObject);
+}

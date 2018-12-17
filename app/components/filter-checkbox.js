@@ -1,7 +1,14 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 export default Component.extend({
-  text: null,
+  tagName: '',
+  value: null,
   color: null,
-  isSelected: true
+  selectedValue: null,
+  takeAction() {},
+
+  isSelected: computed('selectedValue', 'value', function() {
+    return Number(this.get('selectedValue')) === this.get('value');
+  })
 });

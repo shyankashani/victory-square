@@ -1,8 +1,4 @@
-<small
-  class="d-inline py-1 px-2
-    border border-{{color}}
-    {{if isSelected (concat "text-white bg-" color)}}
-  "
->
-  {{text}}
-</small>
+<small class="d-inline py-1 px-2 font-monospace cursor-pointer border border-{{color}}
+    {{if isSelected (concat "text-white bg-" color) "text-dark"}}"
+  {{action takeAction value}}
+>{{value}}</small>

@@ -54,4 +54,9 @@
     {{/link-to}}
   {{/each}}
 </div>
-{{filters-sidebar}}
+{{filters-sidebar
+  togglePlayers=(action "togglePlayers")
+  togglePlayTime=(action "togglePlayTime")
+  players=players
+  playTime=playTime
+}}
