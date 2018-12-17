@@ -10,8 +10,8 @@ const STRINGS = {
   'header:minimumAge': 'Ages',
   'header:bgg_average_rating': 'Board Game Geek Average Rating',
   'header:bgg_average_weight': 'Board Game Geek Average Weight',
-  'header:year_published': 'Year Published'
-
+  'header:year_published': 'Year Published',
+  'header:game': 'Game'
 }
 
 export function string(params) {

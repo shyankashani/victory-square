@@ -5,21 +5,30 @@
     </div>
   </div>
   <div class="row pt-5">
-    <div class="col-1 pr-4">
-      {{info-label icon="square-o"}}
-    </div>
-    <div class="col-5 pr-4">
-      {{info-label header="Game" icon="arrow-down"}}
-    </div>
-    <div class="col-2 pr-4">
-      {{info-label header="House Location" icon="arrow-down"}}
-    </div>
-    <div class="col-2 pr-4">
-      {{info-label header="House Difficulty" icon="arrow-down"}}
-    </div>
-    <div class="col-2 pr-4">
-      {{info-label header="House Category" icon="arrow-down"}}
-    </div>
+    {{info-label
+      class="col-1 pr-4"
+      icon="square-o"
+    }}
+    {{info-label
+      class="col-5 pr-4"
+      property="game"
+      icon="arrow-down"
+    }}
+    {{info-label
+      class="col-2 pr-4"
+      property="location"
+      icon="arrow-down"
+    }}
+    {{info-label
+      class="col-2 pr-4"
+      property="difficulty"
+      icon="arrow-down"
+    }}
+    {{info-label
+      class="col-2 pr-4"
+      property="category"
+      icon="arrow-down"
+    }}
   </div>
   {{#each model.items as |item|}}
     {{#link-to
