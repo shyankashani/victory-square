@@ -8,23 +8,38 @@
     <div class="col-3 pr-5">
         <img src={{model.item.game.image}} class="w-100"/>
     </div>
-    <div class="col-6 pr-5">
-      {{#info-label header="Description" icon="book"}}
-        {{model.item.game.shortDescription}}
-      {{/info-label}}
-    </div>
+    {{info-label
+      class="col-6 pr-5"
+      header="Description"
+      icon="book"
+      size="small"
+      value=model.item.game.shortDescription
+    }}
     <div class="col-3 pr-5">
-      {{#info-label header="House Location" icon="map-pin"}}
-        <h3 class="pb-5">Shelf {{model.item.location}}</h3>
-      {{/info-label}}
-
-      {{#info-label header="House Difficulty" icon="gear"}}
-        <h3 class="pb-5">{{model.item.difficulty.name}}</h3>
-      {{/info-label}}
-
-      {{#info-label header="House Category" icon="tag"}}
-        <h3 class="pb-5">{{model.item.category.name}}</h3>
-      {{/info-label}}
+      {{info-label
+        class="pb-4"
+        header="House Location"
+        icon="map-pin"
+        size="large"
+        value=model.item.location
+        item=model.item
+        property="location"
+        updateItem=(action "updateItem")
+      }}
+      {{info-label
+        class="pb-4"
+        header="House Difficulty"
+        icon="gear"
+        size="large"
+        value=model.item.difficulty.name
+      }}
+      {{info-label
+        class="pb-4"
+        header="House Category"
+        icon="tag"
+        size="large"
+        value=model.item.category.name
+      }}
     </div>
   </div>
 </div>

@@ -56,7 +56,5 @@ function _getItemsForOrganization(store, organizationId, params) {
     queryObject['filter{game.max_play_time.gte}'] = params.playTime;
   }
 
-  console.log('queryObject', queryObject)
-
   return store.query('item', queryObject);
 }
