@@ -18,6 +18,10 @@ Router.map(function() {
   this.route('games', function() {
     this.route('game');
   });
+  
+  this.route('manage', function() {
+    this.route('inventory');
+  });
 });
 
 export default Router;

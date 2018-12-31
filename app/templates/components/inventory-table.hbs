@@ -1,0 +1,12 @@
+{{inventory-table/header}}
+<div class="h-100 overflow-scroll">  
+  {{#each items as |item|}}
+  {{inventory-table/row
+    thumbnail=item.game.thumbnail
+    name=item.game.name
+    location=item.location
+    difficulty=item.difficulty.name
+    category=item.category.name
+  }}
+  {{/each}}
+</div>

@@ -88,23 +88,19 @@
 } */
 
 .ember-power-select-trigger {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  display: inline-block;
+  font-size: 13px;
+  padding: 4px;
   min-height: 16px;
   margin-top: 3px;
-  width: 120px;
-  border: 1px solid black;
+  width: 55%;
+  border-radius: 0px;
 }
 
 .ember-power-select-selected-item {
-  margin-left: 6px;
 }
 
 .ember-basic-dropdown-content {
-  font-size: 12px;
 }
 
 .badge-input {
@@ -112,6 +108,10 @@
   border: 1px solid black;
   font-size: 12px;
   line-height: 1.4;
+}
+
+.font-size-normal {
+  font-size: 1rem !important;
 }
 
 .font-size-small {
@@ -138,4 +138,9 @@
 .button-small:hover {
   background-color: #D2D2D2;
   cursor: pointer;
+}
+
+.overflow-scroll {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important; 
 }

@@ -4,64 +4,6 @@
       <h1>Inventory</h1>
     </div>
   </div>
-  <div class="row pt-5">
-    {{info-label
-      class="col-1 pr-4"
-      icon="square-o"
-    }}
-    {{info-label
-      class="col-5 pr-4"
-      property="game"
-      icon="arrow-down"
-    }}
-    {{info-label
-      class="col-2 pr-4"
-      property="location"
-      icon="arrow-down"
-    }}
-    {{info-label
-      class="col-2 pr-4"
-      property="difficulty"
-      icon="arrow-down"
-    }}
-    {{info-label
-      class="col-2 pr-4"
-      property="category"
-      icon="arrow-down"
-    }}
-  </div>
-  {{#each model.items as |item|}}
-    {{#link-to
-      "organizations.organization.inventory.item"
-      model.organization.id item.id
-      class="row py-2 inventory-row"
-    }}
-      <div class="col-1 pr-4">
-        {{fa-icon "square-o"}}
-      </div>
-      <div class="col-5 pr-4">
-        <div class="row">
-          <div class="col-1">
-            <div class="image-wrapper-tiny">
-              <img src={{item.game.thumbnail}} class="image-tiny"/>
-            </div>
-          </div>
-          <div class="col">
-            {{item.game.name}}
-          </div>
-        </div>
-      </div>
-      <div class="col-2 pr-4">
-        {{item.location}}
-      </div>
-      <div class="col-2 pr-4">
-        {{item.difficulty.name}}
-      </div>
-      <div class="col-2 pr-4">
-        {{item.category.name}}
-      </div>
-    {{/link-to}}
-  {{/each}}
 </div>
 {{filters-sidebar
   togglePlayers=(action "togglePlayers")

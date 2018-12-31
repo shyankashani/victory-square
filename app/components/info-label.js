@@ -47,6 +47,14 @@ export default Component.extend({
 
   isEditable: computed.notEmpty('update'),
 
+  visibleValue: computed('value', function() {
+    if (!this.get('value')) {
+      return '⁂';
+    }
+
+    return this.get('value');
+  }),
+
   mouseEnter() {
     if (this.get('isEditable')) {
       this.set('showEditIcon', true);

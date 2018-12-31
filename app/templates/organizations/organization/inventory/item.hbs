@@ -1,48 +1,54 @@
-<div class="col col-8 p-5">
+<div class="container-fluid">
+  {{top-nav
+  }}
   <div class="row">
-    <div class="col">
-      <h1>{{model.item.game.name}}</h1>
+    <div class="col col-8 p-5">
+      <div class="row">
+        <div class="col">
+          <h1>{{model.item.game.name}}</h1>
+        </div>
+      </div>
+      <div class="row pt-5">
+        <div class="col-3 pr-5">
+          <img src={{model.item.game.image}} class="w-100"/>
+        </div>
+        {{info-label
+          class="col-6 pr-5"
+          property="description"
+          value=model.item.game.shortDescription
+          icon="book"
+          size="small"
+        }}
+        <div class="col-3 pr-5">
+          {{info-label
+            class="pb-5"
+            property="location"
+            value=model.item.location
+            icon="map-pin"
+            size="large"
+            update=(action "update")
+          }}
+          {{info-label
+            class="pb-5"
+            property="difficulty"
+            value=model.item.difficulty.name
+            icon="gear"
+            size="large"
+            update=(action "update")
+            options=model.difficulties
+          }}
+          {{info-label
+            class="pb-5"
+            property="category"
+            value=model.item.category.name
+            icon="tag"
+            size="large"
+          }}
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row pt-5">
-    <div class="col-3 pr-5">
-        <img src={{model.item.game.image}} class="w-100"/>
-    </div>
-    {{info-label
-      class="col-6 pr-5"
-      property="description"
-      value=model.item.game.shortDescription
-      icon="book"
-      size="small"
+    {{game-sidebar
+      game=model.item.game
     }}
-    <div class="col-3 pr-5">
-      {{info-label
-        class="pb-5"
-        property="location"
-        value=model.item.location
-        icon="map-pin"
-        size="large"
-        update=(action "update")
-      }}
-      {{info-label
-        class="pb-5"
-        property="difficulty"
-        value=model.item.difficulty.name
-        icon="gear"
-        size="large"
-        update=(action "update")
-        options=model.difficulties
-      }}
-      {{info-label
-        class="pb-5"
-        property="category"
-        value=model.item.category.name
-        icon="tag"
-        size="large"
-      }}
-    </div>
   </div>
 </div>
-{{game-sidebar
-  game=model.item.game
-}}

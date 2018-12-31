@@ -1,0 +1,12 @@
+<div class="vh-100">
+  <div class="container-fluid fixed-top h-25 px-5 pt-3">
+    {{top-nav}}
+  </div>
+  <div class="container-fluid fixed-top h-75 mt-5 p-5">
+    <div class="row h-100">
+      {{inventory-table
+        items=model.items
+      }}
+    </div>
+  </div>
+</div>
