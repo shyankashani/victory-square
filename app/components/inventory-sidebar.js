@@ -1,5 +1,5 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  classNames: ['d-flex', 'flex-row', 'py-4', 'w-25']
+  classNames: ['col-3', 'h-100', 'bg-light']
 });

@@ -1,12 +1,9 @@
-<div class="vh-100">
-  <div class="container-fluid fixed-top h-25 px-5 pt-3">
-    {{top-nav}}
-  </div>
-  <div class="container-fluid fixed-top h-75 mt-5 p-5">
-    <div class="row h-100">
-      {{inventory-table
-        items=model.items
-      }}
-    </div>
+<div class="container vh-100">
+  {{top-nav}}
+  <div class="d-flex flex-row fixed-top h-100">
+    {{inventory-table
+      items=model.items
+    }}
+    {{inventory-sidebar}}
   </div>
 </div>

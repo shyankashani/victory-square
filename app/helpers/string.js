@@ -8,10 +8,11 @@ const STRINGS = {
   'header:numberOfPlayers': 'Players',
   'header:playTime': 'Duration',
   'header:minimumAge': 'Ages',
-  'header:bgg_average_rating': 'Board Game Geek Average Rating',
-  'header:bgg_average_weight': 'Board Game Geek Average Weight',
+  'header:bgg_average_rating': 'BGG Avg. Rating',
+  'header:bgg_average_weight': 'BGG Avg. Weight',
   'header:year_published': 'Year Published',
-  'header:game': 'Game'
+  'header:game': 'Game',
+  'header:name': 'Name'
 }
 
 export function string(params) {

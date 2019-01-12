@@ -18,9 +18,10 @@ Router.map(function() {
   this.route('games', function() {
     this.route('game');
   });
-  
+
   this.route('manage', function() {
     this.route('inventory');
+    this.route('item', { path: 'item/:item_id' });
   });
 });
 

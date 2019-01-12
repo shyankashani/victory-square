@@ -1,33 +1,59 @@
-<div class="d-inline border-top border-secondary pt-1 font-size-{{if isFontNormal "normal" "small"}}">
-  {{fa-icon icon class="d-inline pr-1"}}
-  {{string (concat "header:" property)}}
+<div
+  class="
+    d-inline
+    border-top
+    border-secondary
+    pt-1
+    font-size-{{if isFontNormal "normal" "small"}}
+  "
+>
+  {{fa-icon
+    icon
+    class="d-inline pr-1"
+  }}
+  {{string
+    (concat "header:" property)
+  }}
 </div>
+
 {{#if value}}
-<div class="mt-2">
-  {{#if isEditing}}
-    {{#if options}}
-      {{#power-select
-        options=options
-        selected=value
-        onchange=(action "save")
-        searchEnabled=false
-        as |option|
-      }}
-        {{option.name}}
-      {{/power-select}}
-    {{else }}
-      {{input
-        class="p-1 w-25 font-size-small"
-        value=value
-      }}
+  <div class="mt-2">
+    {{#if isEditing}}
+      {{#if options}}
+        {{#power-select
+          options=options
+          selected=value
+          onchange=(action "save")
+          searchEnabled=false
+          as |option|
+        }}
+          {{option.name}}
+        {{/power-select}}
+      {{else }}
+        {{input
+          value=value
+          class="
+            p-1
+            w-25
+            font-size-small
+          "
+        }}
+      {{/if}}
+      <div class="button-small" {{action "save"}}>
+        {{fa-icon "check"}}
+      </div>
+      <div class="button-small" {{action "discard"}}>
+        {{fa-icon "close"}}
+      </div>
+    {{else}}
+      <div class="d-inline {{if (eq size "large") "h3"}}">
+        {{visibleValue}}
+      </div>
+      {{#if showEditIcon}}
+        <div class="button-small" {{action "edit"}}>
+          {{fa-icon "pencil"}}
+        </div>
+      {{/if}}
     {{/if}}
-    <div class="button-small" {{action "save"}}>{{fa-icon "check"}}</div>
-    <div class="button-small" {{action "discard"}}>{{fa-icon "close"}}</div>
-  {{else}}
-    <div class="d-inline {{if (eq size "large") "h3"}}">{{visibleValue}}</div>
-    {{#if showEditIcon}}
-      <div class="button-small" {{action "edit"}}>{{fa-icon "pencil"}}</div>
-    {{/if}}
-  {{/if}}
-</div>
+  </div>
 {{/if}}

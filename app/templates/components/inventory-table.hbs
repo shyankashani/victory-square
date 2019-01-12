@@ -1,12 +1,18 @@
 {{inventory-table/header}}
-<div class="h-100 overflow-scroll">  
+<div class="h-100 overflow-scroll">
   {{#each items as |item|}}
-  {{inventory-table/row
-    thumbnail=item.game.thumbnail
-    name=item.game.name
-    location=item.location
-    difficulty=item.difficulty.name
-    category=item.category.name
-  }}
+    {{#link-to
+      "manage.item"
+      item.id
+      class="inventory-row"
+    }}
+      {{inventory-table/row
+        thumbnail=item.game.thumbnail
+        name=item.game.name
+        location=item.location
+        difficulty=item.difficulty.name
+        category=item.category.name
+      }}
+    {{/link-to}}
   {{/each}}
 </div>

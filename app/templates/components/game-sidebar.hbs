@@ -1,7 +1,10 @@
-{{#sidebar-container as |section|}}
-  {{#if section.isHeaderSection}}
+<div class="row">
+  <div class="col">
     Game Detail
-  {{else if section.isBodySection}}
+  </div>
+</div>
+<div class="row pt-5">
+  <div class="col pb-5">
     {{info-label
       property="numberOfPlayers"
       icon="users"
@@ -44,5 +47,5 @@
       size="large"
       class="pb-5"
     }}
-  {{/if}}
-{{/sidebar-container}}
+  </div>
+</div>

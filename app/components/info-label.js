@@ -74,7 +74,6 @@ export default Component.extend({
       const update = this.get('update');
       const property = this.get('property');
       const value = this.get('value');
-      console.log('value', value);
 
       update(property, value);
       this.set('isEditing', false);
